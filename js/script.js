@@ -124,9 +124,21 @@ const app = new Vue({
 
           // clean il input
           this.$refs.inputMsj.value = '';
+
+          //Risponde il msj con un ok dopo 1 secondo
+
+          setTimeout(() => {
+            const okMessage = {
+              text: 'Ok :)',
+              type: 'received',
+              timestamp: this.obtainHour()
+            };
+            this.contacts[this.selectedChat].messages.push(okMessage);
+          }, 1000);
         }
       }
     },
+
     obtainHour() {
       const data = new Date();
       const hour = data.getHours().toString().padStart(2, '0');
