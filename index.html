@@ -3,69 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat App</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="container">
     <div class="sidebar">
-      <div class="user">
-        <img src="/img/avatar_io.jpg" alt="User Avatar">
-        <span>Sofia</span>
-      </div>
-      <div class="notifications">
-        <i class="fa fa-bell"></i>
-        <span>Ricevi notifiche di nuovi messaggi</span>
-      </div>
-      <div class="search">
-        <i class="fa fa-search"></i>
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
-      </div>
       <div class="contacts">
-        <div class="contact">
-          <img src="/img/avatar_4.jpg" alt="Contact Avatar">
+        <div v-for="(contact, index) in contacts" :key="index" class="contact" @click="openChat(index)">
+          <img :src="contact.avatar" :alt="'Contact Avatar ' + index">
           <div class="contact-info">
-            <span class="name">Michele</span>
-            <span class="last-message">Ultimo messaggio inviato</span>
-            <span class="timestamp">12:00</span>
+            <span class="name">{{ contact.name }}</span>
+            <span class="last-message">{{ contact.lastMessage }}</span>
+            <span class="timestamp">{{ contact.timestamp }}</span>
           </div>
         </div>
-        <!-- Aggiungere altri contatti qui -->
       </div>
     </div>
     <div class="chat">
-      <div class="header">
-        <img src="/img/avatar_1.jpg" alt="Contact Avatar">
-        <div class="contact-details">
-          <span class="name">Michele</span>
-          <span class="last-seen">Ultimo accesso oggi alle 12:00</span>
+      <div v-if="selectedChat !== null" class="contact-chat">
+        <div class="header">
+          <img :src="contacts[selectedChat].avatar" :alt="'Contact Avatar ' + selectedChat">
+          <div class="contact-details">
+            <span class="name">{{ contacts[selectedChat].name }}</span>
+            <span class="last-seen">{{ contacts[selectedChat].lastSeen }}</span>
+          </div>
         </div>
-      </div>
-      <div class="messages">
-        <div class="message received">
-          <span class="text">Ciao, come stai?</span>
-          <span class="timestamp">12:15</span>
+        <div class="messages">
+          <div v-for="(message, index) in contacts[selectedChat].messages" :key="index" :class="['message', message.type]">
+            <span class="text">{{ message.text }}</span>
+            <span class="timestamp">{{ message.timestamp }}</span>
+          </div>
         </div>
-        <div class="message sent">
-          <span class="text">Sto bene, grazie!</span>
-          <span class="timestamp">12:18</span>
+        <div class="input">
+          <i class="fa fa-smile-o"></i>
+          <input type="text" placeholder="Scrivi un messaggio">
+          <i class="fa fa-microphone"></i>
         </div>
-        <div class="message received">
-          <span class="text">Cosa hai fatto oggi?</span>
-          <span class="timestamp">12:23</span>
-        </div>
-        <div class="message sent">
-          <span class="text">Ho lavorato un po' e poi sono uscito a fare una passeggiata.</span>
-          <span class="timestamp">12:25</span>
-        </div>
-      </div>
-      <div class="input">
-        <i class="fa fa-smile-o"></i>
-        <input type="text" placeholder="Scrivi un messaggio">
-        <i class="fa fa-microphone"></i>
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
