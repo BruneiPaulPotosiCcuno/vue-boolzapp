@@ -219,3 +219,26 @@ body {
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Aggiunto search contacts */
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.search i {
+  margin-right: 10px;
+  color: #999;
+}
+
+.search input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

@@ -10,6 +10,10 @@
 <body>
   <div class="container">
     <div class="sidebar">
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Cerca o inizia una nuova chat">
+    </div>
       <div class="contacts">
         <div v-for="(contact, index) in contacts" :key="index" class="contact" @click="openChat(index)">
           <img :src="contact.avatar" :alt="'Contact Avatar ' + index">
