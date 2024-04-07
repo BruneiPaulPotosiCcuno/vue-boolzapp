@@ -83,7 +83,7 @@ body {
 }
 
 .contact:hover {
-  background-color: #2c3e50;
+  background-color: #e9ebeb;
 }
 
 .contact img {
@@ -243,3 +243,21 @@ body {
   border: none;
   outline: none;
 }
+
+/* Notification style */
+
+.notification-bar {
+  display: flex;
+  align-items: center;
+  background-color: #8edafc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.notification-bar i {
+  margin-right: 10px;
+  color: #666;
+  font-size: 30px;
+}
+
