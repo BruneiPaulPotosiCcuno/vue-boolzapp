@@ -38,13 +38,12 @@
         </div>
         <div class="input">
           <i class="fa fa-smile-o"></i>
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="sentMessage" ref="inputMsj">
           <i class="fa fa-microphone"></i>
         </div>
       </div>
     </div>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script src="/js/script.js"></script>
 </body>

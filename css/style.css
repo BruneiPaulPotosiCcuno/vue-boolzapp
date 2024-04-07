@@ -194,6 +194,28 @@ body {
   display: flex;
   flex-direction: column;
   background-image: url('/img/mine.jpg');
-  background-size: cover;
   background-repeat: repeat;
+}
+
+.input {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #2a2828;
+}
+
+.input i {
+  margin: 0 10px;
+  color: #999;
+}
+
+.input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
