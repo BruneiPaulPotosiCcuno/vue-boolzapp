@@ -186,10 +186,10 @@ body {
 .input input {
   flex: 1;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 2px;
   border: none;
   outline: none;
-  background-color: #f3eeea;
+  
   box-shadow: 0 0 5px rgba(47, 123, 33, 0.1);
 }
 
