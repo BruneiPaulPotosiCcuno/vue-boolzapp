@@ -10,17 +10,16 @@
 <body>
   <div class="container">
     <div class="sidebar">
-      
       <div class="notification-bar">
         <i class="fa fa-bell"></i>
         <span>Ricevi notifiche di nuovi messaggi</span>
       </div>
       <div class="search">
         <i class="fa fa-search"></i>
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
-    </div>
+        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchQuery">
+      </div>
       <div class="contacts">
-        <div v-for="(contact, index) in contacts" :key="index" class="contact" @click="openChat(index)">
+        <div v-for="(contact, index) in filterContacts()" :key="index" class="contact" @click="openChat(index)">
           <img :src="contact.avatar" :alt="'Contact Avatar ' + index">
           <div class="contact-info">
             <span class="name">{{ contact.name }}</span>
