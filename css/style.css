@@ -235,8 +235,7 @@ body {
   align-items: center;
   background-color: #8edafc;
   padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .notification-bar i {
